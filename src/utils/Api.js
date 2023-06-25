@@ -87,4 +87,4 @@ class Api {
     }
 }
 
-export { Api }; 
+export default Api;

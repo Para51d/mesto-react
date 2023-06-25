@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import api from "../utils/Api.js";
-import Card from "./Card.js";
+import Api from "../utils/Api";
+import Card from "./Card";
 
 function Main(props) {
     const [userName, setUserName] = useState("");
@@ -9,7 +9,7 @@ function Main(props) {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        Promise.all([api.getUserInfo(), api.getCards()])
+        Promise.all([Api.getUserInfo(), Api.getCards()])
             .then(([dataUser, cards]) => {
                 setUserName(dataUser.name);
                 setUserDescription(dataUser.about);
