@@ -6,28 +6,28 @@ function Card(props) {
         props.onCardClick(props.card);
     }
     return (
-        <div className="element">
+        <div className="card">
             <button
-                className="element__card-delete"
+                className="card__button-removal"
                 type="button"
                 aria-label="Удалить"
             >
             </button>
-            <img className="element__image"
+            <img className="card__image"
                 src={props.card.link}
                 alt={props.card.name}
                 onClick={handleCardClick}
             />
-            <div className="element__line">
-                <h2 className="element__title">{props.card.name}</h2>
-                <div className="element__section-like">
+            <div className="card__caption">
+                <h2 className="card__title">{props.card.name}</h2>
+                <div className="card__like">
                     <button
-                        className="element__like"
+                        className="card__button-like"
                         type="button"
                         aria-label="Нравится"
                     >
                     </button>
-                    <p className="element__likes">{props.card.likes.length}</p>
+                    <p className="card__like-counter">{props.card.likes.length}</p>
                 </div>
             </div>
         </div>

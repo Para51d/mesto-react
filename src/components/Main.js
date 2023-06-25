@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import api from "../utils/Api";
-import Card from "./Card";
+import api from "../utils/Api.js";
+import Card from "./Card.js";
 
 function Main(props) {
     const [userName, setUserName] = useState("");
@@ -24,9 +24,9 @@ function Main(props) {
     }, []);
 
     return (
-        <main className="content">
+        <main className="main">
             <section className="profile">
-                <div className="profile__pen">
+                <div className="profile__avatar-unit">
                     <img
                         className="profile__avatar"
                         src={userAvatar}
@@ -35,8 +35,8 @@ function Main(props) {
                     />
                 </div>
                 <div className="profile__info">
-                    <div className="profile__header">
-                        <h1 className="profile__title">{userName}</h1>
+                    <div className="profile__person">
+                        <h1 className="profile__username">{userName}</h1>
                         <button
                             className="profile__edit-button"
                             type="button"
@@ -45,7 +45,7 @@ function Main(props) {
                         >
                         </button>
                     </div>
-                    <p className="profile__subtitle">{userDescription}</p>
+                    <p className="profile__text">{userDescription}</p>
                 </div>
                 <button
                     className="profile__add-button"
@@ -55,7 +55,7 @@ function Main(props) {
                 >
                 </button>
             </section>
-            <div className="elements">
+            <div className="places">
                 {cards.map((card) => (
                     <Card
                         key={card._id}
