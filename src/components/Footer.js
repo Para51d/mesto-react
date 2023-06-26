@@ -7,7 +7,6 @@ function Footer() {
             <p
                 className="footer__info"
             >
-                {/* &copy; 2020 Mesto Russia */}
                 {date.getFullYear()} Mesto Russia
             </p>
         </footer>

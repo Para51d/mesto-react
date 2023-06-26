@@ -1,3 +1,5 @@
+import { settings } from "./constants.js";
+
 class Api {
     constructor({ baseUrl, headers }) {
         this._baseUrl = baseUrl;
@@ -87,4 +89,6 @@ class Api {
     }
 }
 
-export default Api;
+const api = new Api(settings);
+
+export default api;

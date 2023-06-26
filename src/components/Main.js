@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Api from "../utils/Api";
+import api from "../utils/Api";
 import Card from "./Card";
 
 function Main(props) {
@@ -9,7 +9,7 @@ function Main(props) {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        Promise.all([Api.getUserInfo(), Api.getCards()])
+        Promise.all([api.getUserInfo(), api.getInitialCards()])
             .then(([dataUser, cards]) => {
                 setUserName(dataUser.name);
                 setUserDescription(dataUser.about);
@@ -31,8 +31,8 @@ function Main(props) {
                         className="profile__avatar"
                         src={userAvatar}
                         alt="Аватар"
-                        onClick={props.onEditAvatar}
                     />
+                    <div className="profile__change-avatar" onClick={props.onEditAvatar}></div>
                 </div>
                 <div className="profile__info">
                     <div className="profile__person">
